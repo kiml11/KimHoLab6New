@@ -7,14 +7,27 @@ def print_menu():
 # creates and prints the menu
 
 
-def encoder(password):
+def password_encode(password):
+    # adds 3 to the original password
+    encoded_password = "".join([str((int(digit) + 3) % 10) for digit in password])
+    return encoded_password
+
+    '''
     encoded_password = " "  # created an empty string for a list
     for x in password:
         temp_pass = int(x)
         temp_pass = int(temp_pass + 3) % 10
         encoded_password = encoded_password + str(temp_pass)
     return encoded_password
+    '''
 
+def decoder(password):
+    decoded_password = " "
+    for x in password:
+        temp_pass = int(x)
+        temp_pass = int(temp_pass - 3) % 10
+        encoded_password = decoded_password + str(temp_pass)
+    return decoded_password
 
 if __name__ == '__main__':
     # prints menu and asks for input in a loop
@@ -25,7 +38,7 @@ if __name__ == '__main__':
         if option == 1:
             password = input("Please enter your password to encode: ")  # asks user for password to input
             print("Your password has been encoded and stored!\n")
-            print(encoder(password))
+            print(password_encode(password))
         elif option == 2:
             password = input("Please enter your password to decode: ")
             print("The encoded password is, and the original password is \n")
