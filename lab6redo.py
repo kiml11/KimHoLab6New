@@ -23,7 +23,7 @@ if __name__ == '__main__':
         print_menu()
         option = int(input("\nPlease enter an option: "))   # asks user for option input
         if option == 1:
-            password = input("Please enter your password to encode: ")
+            password = input("Please enter your password to encode: ")  # asks user for password to input
             print("Your password has been encoded and stored!\n")
             print(encoder(password))
         elif option == 2:
