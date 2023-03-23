@@ -31,6 +31,8 @@ def decoder(password):
 
 if __name__ == '__main__':
     # prints menu and asks for input in a loop
+    encoded_password = " "
+    password = " "
     while True:
         # function that prints menu
         print_menu()
@@ -38,9 +40,12 @@ if __name__ == '__main__':
         if option == 1:
             password = input("Please enter your password to encode: ")  # asks user for password to input
             print("Your password has been encoded and stored!\n")
-            print(password_encode(password))
+            # Removed this because this option only needs to store the password not print it
+            # print(password_encode(password))
+            encoded_password = password_encode(password)
         elif option == 2:
-            password = input("Please enter your password to decode: ")
-            print("The encoded password is, and the original password is \n")
+            # removed this because you only need one password input
+            # password = input("Please enter your password to decode: ")
+            print(f"The encoded password is {encoded_password}, and the original password is {password} \n")
         elif option == 3:
             break
